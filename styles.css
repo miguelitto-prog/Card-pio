@@ -1,0 +1,84 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f0f4ff, #dfe9f3);
+  color: #333;
+  padding: 2rem;
+}
+
+/* Container principal */
+.menu {
+  max-width: 800px;
+  margin: auto;
+}
+
+.menu-item {
+  background-color: #ffffffee;
+  border-radius: 14px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.8rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+}
+
+.dish-name {
+  font-size: 1.6rem;
+  padding: 1.2rem;
+  background-color: #3b82f6;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.dish-thumb {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+/* Detalhes do prato */
+.dish-details {
+  padding: 1.2rem;
+  background-color: #f9fafb;
+  border-top: 1px solid #eee;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.menu-item.open .dish-details {
+  max-height: 350px;
+  opacity: 1;
+}
+
+.dish-details p {
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dish-thumb {
+    max-height: 320px;
+  }
+}
